@@ -1,103 +1,105 @@
-# edge-ai-wafer-defect-classification
-Lightweight Edge-AI system for real-time wafer and die inspection defect classification using a CNN optimized for NXP i.MX RT devices.
+# 🚀 Lightweight Edge‑AI System for Real‑Time Wafer & Die Defect Classification
 
-Edge-AI Wafer Defect Classification
+> **Edge‑aware. Fab‑realistic. Deployment‑ready.**
 
-Overview:
+This repository contains a **Phase‑1 prototype** of an **Edge‑AI defect classification system** designed for **real‑time semiconductor wafer and die inspection**. The solution uses a **lightweight CNN**, optimized for **CPU‑only edge deployment** on **NXP i.MX RT devices** via the **NXP eIQ framework**.
 
-This repository contains a Phase-1 prototype of an Edge-AI based defect classification system for semiconductor wafer and die inspection images.
-The goal is to demonstrate dataset credibility, model feasibility, and edge-awareness rather than state-of-the-art accuracy.
+The objective is **not leaderboard accuracy** — it’s **technical credibility**: dataset realism, model feasibility, and edge‑deployment readiness.
 
-The system classifies inspection images into fab-realistic defect categories using a lightweight CNN suitable for deployment on NXP i.MX RT edge devices via the NXP eIQ framework.
+---
 
-Problem Context:
+## 📌 Problem Context
 
-Modern semiconductor fabrication relies on optical and SEM inspection systems that generate large volumes of high-resolution images.
-Centralized inspection pipelines suffer from:
+Modern semiconductor fabs generate **massive volumes of inspection images** (optical + SEM). Centralized pipelines struggle with:
 
-High inference latency
+* 🚫 High inference latency
+* 🚫 Bandwidth overhead from image transfer
+* 🚫 Poor scalability for real‑time production lines
 
-Bandwidth overhead due to image transfer
+**Edge‑based defect classification** enables **early screening directly at the inspection tool**, reducing **data movement**, **latency**, and **operational cost**.
 
-Poor scalability for real-time production lines
+This repo proves that concept — clean, simple, and edge‑aware.
 
-Edge-based defect classification enables early defect screening at the inspection tool, reducing data movement and operational cost.
+---
 
-Task Definition:
+## 🎯 Task Definition
 
-Task: Image Classification
+* **Task Type:** Image Classification
+* **Input:** Single grayscale wafer / die inspection image
+* **Output:** One defect class label per image
 
-Input: Single grayscale wafer / die inspection image
+📌 *Scope note:* This project focuses **strictly on classification** — **no detection or segmentation** in Phase‑1.
 
-Output: One defect class label per image
+---
 
-This project focuses strictly on classification (no detection or segmentation).
+## 🧪 Defect Classes
 
-Defect Classes
+The model classifies images into **8 non‑overlapping, fab‑realistic defect categories**:
 
-The model classifies images into 8 non-overlapping classes:
+1. `clean`
+2. `other`
+3. `shorts`
+4. `opens`
+5. `bridges`
+6. `cmp_scratches`
+7. `cracks`
+8. `malformed_vias`
 
-clean
+These classes are:
 
-other
+* Visually distinguishable
+* Common in real inspection flows
+* Scalable to future phases
 
-shorts
+---
 
-opens
+## 📂 Dataset
 
-bridges
+* **Minimum size:** 500+ images
+* **Target size:** ~800 images
+* **Class balance:** No class < 10%
 
-cmp_scratches
+### Data Sources
 
-cracks
+* WM‑811K Wafer Defect Dataset
+* SEM defect image datasets
+* Curated academic inspection imagery
 
-malformed_vias
-
-These classes are chosen to be visually distinguishable, fab-realistic, and scalable to later phases.
-
-Dataset:
-
-Minimum 500+ images (target: 800)
-
-Balanced class distribution (no class <10%)
-
-Images sourced from:
-
-Public wafer defect datasets (e.g., WM-811K)
-
-SEM defect datasets
-
-Curated academic inspection images
+### Preprocessing
 
 All images are:
 
-Converted to grayscale
+* Converted to **grayscale**
+* Resized to a **fixed resolution**
+* Manually curated to contain **one dominant defect per image**
 
-Resized to a fixed resolution
+📄 See **`DATASET.md`** for full provenance and curation details.
 
-Manually curated to contain one dominant defect per image
+---
 
-📄 See DATASET.md for full dataset details and provenance.
+## 🧠 Model
 
-Model
+* **Architecture:** Lightweight CNN
 
-Architecture: Lightweight CNN (MobileNetV2 / EfficientNet-Lite)
+  * MobileNetV2 *or* EfficientNet‑Lite
+* **Training Framework:** PyTorch
+* **Export Format:** ONNX
 
-Training Framework: PyTorch
+### 🎯 Edge Constraints (Target)
 
-Export Format: ONNX
+| Constraint | Target                     |
+| ---------- | -------------------------- |
+| Model size | < 10 MB                    |
+| Latency    | < 50 ms / image (CPU est.) |
+| Deployment | NXP i.MX RT (CPU‑only)     |
 
-Edge Constraints (Target)
+The ONNX model is compatible with **NXP eIQ** for downstream deployment.
 
-Model size: < 10 MB
+---
 
-Inference latency: < 50 ms / image (CPU estimate)
+## 🗂 Repository Structure
 
-Deployment target: NXP i.MX RT (CPU-only)
-
-The model is exported in ONNX format for compatibility with NXP eIQ.
-
-Repository Structure
+```
 ├── dataset/
 │   ├── train/
 │   ├── val/
@@ -111,71 +113,97 @@ Repository Structure
 ├── DATASET.md
 ├── README.md
 └── requirements.txt
+```
 
-How to Run:
+Clean layout. No chaos. Easy handoff.
 
-1. Install Dependencies
+---
+
+## ▶️ How to Run
+
+### 1️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-2. Train the Model
+### 2️⃣ Train the Model
+
+```bash
 python train.py
+```
 
-3. Evaluate the Model
+### 3️⃣ Evaluate the Model
+
+```bash
 python eval.py
+```
 
-4. Run Inference on a Sample Image
+### 4️⃣ Run Inference on a Sample Image
+
+```bash
 python inference.py --image path/to/image.png
+```
 
-5. Export Model to ONNX
+### 5️⃣ Export to ONNX
+
+```bash
 python export_onnx.py
+```
 
-Results (Phase-1):
+---
 
-Phase-1 evaluation focuses on feasibility and correctness, not peak accuracy.
+## 📊 Results (Phase‑1)
 
-Reported metrics include:
+Phase‑1 evaluation prioritizes **feasibility and correctness**, not peak accuracy.
 
-Accuracy
+Reported metrics:
 
-Precision (macro)
+* Accuracy
+* Macro Precision
+* Macro Recall
+* Confusion Matrix
+* Model size
 
-Recall (macro)
+📄 Detailed results are documented in the **Phase‑1 submission PDF**.
 
-Confusion Matrix
+---
 
-Model size
+## ⚠️ Limitations
 
-Detailed results are documented in the Phase-1 submission PDF.
+Accepted (and intentional) Phase‑1 constraints:
 
-Limitations:
+* Limited dataset size vs. production fab data
+* Latency is **estimated** (hardware benchmarking planned)
+* Classification only (no localization)
 
-Dataset size is limited compared to production-scale fab data
+This is a **proof‑of‑feasibility**, not a final fab product.
 
-Latency is estimated (hardware benchmarking planned in Phase-2)
+---
 
-Model is trained for classification only (no localization)
+## 🛣 Phase‑2 Roadmap
 
-These limitations are intentionally accepted for Phase-1.
+* Deployment on **NXP i.MX RT hardware** using eIQ
+* On‑device latency & memory benchmarking
+* Incremental dataset expansion
+* Optional defect localization extension
 
-Phase-2 Roadmap:
+Translation: less theory, more silicon.
 
-Deployment on NXP i.MX RT hardware using eIQ
+---
 
-Latency and memory benchmarking on device
+## 📎 Disclaimer
 
-Incremental dataset expansion
+Organizer‑provided sample images are used **only for reference and visualization**. They are **not used** in training, validation, or testing.
 
-Optional defect localization extension
+---
 
-Disclaimer:
+## 📚 References
 
-Organizer-provided sample images are used only for reference and visualization.
-They are not used in training, validation, or testing.
+* WM‑811K Wafer Map Defect Dataset
+* SEM Defect Image Datasets
+* Academic literature on semiconductor inspection & edge AI
 
-References:
+---
 
-WM-811K Wafer Map Defect Dataset
-
-SEM Defect Image Datasets
-
-Academic literature on semiconductor inspection and edge AI
+💡 *Built to prove that edge‑first inspection AI is not just possible — it’s practical.*
