@@ -1,10 +1,10 @@
-# 🧪 Defect Class Definitions (Phase-1)
+# 🧪 Defect Class Definitions (Phase‑1)
 
-This document defines the **defect classes** used in the **Phase-1 wafer/die inspection defect classification task**.
+This document defines the **defect classes** used in the **Phase‑1 wafer/die inspection defect classification task**.
 
 Each class is defined based on **visual characteristics observable in optical or SEM inspection images**. The goal is to ensure **label clarity, consistency, and reproducibility** across the dataset.
 
-> **Note:** Organizer-provided sample images are used **only for visual reference**. They are **not included** in training, validation, or evaluation datasets.
+> **Note:** Organizer‑provided sample images are used **only for visual reference**. They are **not included** in training, validation, or evaluation datasets.
 
 ---
 
@@ -22,7 +22,7 @@ Inspection images that show **nominal wafer or die patterns** with **no visible 
 
 ### Notes
 
-This class represents **defect-free samples** and serves as a **baseline reference** for defect comparison.
+This class represents **defect‑free samples** and serves as a **baseline reference** for defect comparison.
 
 **Example:**
 *(Insert one representative clean inspection image)*
@@ -42,12 +42,16 @@ Images containing **anomalies that do not clearly belong** to any predefined def
 * Edge roughness or irregular texture
 * Unclassified or rare defect patterns
 
+### Why this class exists
+
+To **absorb ambiguous or rare defects** and prevent forced mislabeling that would degrade model learning.
+
 ### Notes
 
-This class prevents **forced mislabeling of ambiguous defects** and improves overall **model robustness**.
+This class improves overall **model robustness** by handling edge cases realistically seen in fab inspection.
 
-**Example:**
-*(Insert one representative “other” defect image)*
+**Example (Placeholder):**
+🖼️ `other_sample_placeholder.png`
 
 ---
 
@@ -63,12 +67,16 @@ Defects where **unintended electrical connections** form between adjacent conduc
 * Reduced spacing between features
 * Localized conductive bridges
 
+### Why this class exists
+
+Shorts represent **electrical failure mechanisms** that must be identified early to prevent downstream yield loss.
+
 ### Notes
 
 Shorts typically originate from **process variations** or **material over-deposition**.
 
-**Example:**
-*(Insert one representative shorts defect image)*
+**Example (Placeholder):**
+🖼️ `shorts_sample_placeholder.png`
 
 ---
 
@@ -105,12 +113,16 @@ Defects where **two or more structures are unintentionally connected** due to ex
 * Material spillover between lines
 * Clear structural linkage between separate patterns
 
+### Why this class exists
+
+Bridges are **structurally and visually distinct** from shorts and require separate classification for accurate defect analysis.
+
 ### Notes
 
-Bridges are **visually distinct from shorts** due to **larger and more pronounced connecting regions**.
+Bridges differ from shorts due to their **larger, more pronounced connecting regions**.
 
-**Example:**
-*(Insert one representative bridges defect image)*
+**Example (Placeholder):**
+🖼️ `bridges_sample_placeholder.png`
 
 ---
 
@@ -124,7 +136,7 @@ Surface defects introduced during **Chemical Mechanical Planarization (CMP)** pr
 
 * Long, linear surface marks
 * Parallel or gently curved scratch patterns
-* Surface-level abrasions
+* Surface‑level abrasions
 
 ### Notes
 
@@ -145,7 +157,7 @@ Structural fractures or breaks caused by **mechanical or thermal stress**.
 
 * Jagged or irregular fracture lines
 * Sharp edges and discontinuities
-* Non-uniform thickness along the defect
+* Non‑uniform thickness along the defect
 
 ### Notes
 
@@ -170,7 +182,7 @@ Defects involving **incomplete, missing, or deformed via structures**.
 
 ### Notes
 
-These defects are typically identified in **high-magnification inspection images**.
+These defects are typically identified in **high‑magnification inspection images**.
 
 **Example:**
 *(Insert one representative malformed via image)*
@@ -179,9 +191,9 @@ These defects are typically identified in **high-magnification inspection images
 
 ## 🔒 Class Finalization Statement
 
-The above **eight defect classes are fixed for Phase-1** and **will not be modified**.
+The above **eight defect classes are fixed for Phase‑1** and **will not be modified**.
 
 * Each image in the dataset is labeled with **exactly one dominant defect class**
-* No multi-label or ambiguous annotations are allowed in Phase-1
+* No multi‑label or ambiguous annotations are allowed in Phase‑1
 
 This strict class definition ensures **dataset consistency**, **training stability**, and **fair evaluation**.
