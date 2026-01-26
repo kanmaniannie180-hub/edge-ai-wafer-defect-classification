@@ -25,7 +25,8 @@ Inspection images that show **nominal wafer or die patterns** with **no visible 
 This class represents **defect‑free samples** and serves as a **baseline reference** for defect comparison.
 
 **Example:**
-*(Insert one representative clean inspection image)*
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/0bc0a1b2-e40f-41a9-8c8c-7a48331f3f36" />
+
 
 ---
 
@@ -50,8 +51,9 @@ To **absorb ambiguous or rare defects** and prevent forced mislabeling that woul
 
 This class improves overall **model robustness** by handling edge cases realistically seen in fab inspection.
 
-**Example (Placeholder):**
-🖼️ `other_sample_placeholder.png`
+**Example:**
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/d06facd8-64f3-4f06-b646-27ab316f2164" />
+
 
 ---
 
@@ -75,8 +77,9 @@ Shorts represent **electrical failure mechanisms** that must be identified early
 
 Shorts typically originate from **process variations** or **material over-deposition**.
 
-**Example (Placeholder):**
-🖼️ `shorts_sample_placeholder.png`
+**Example:**
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/3420313a-f578-4478-99e0-4286dc58b82a" />
+
 
 ---
 
@@ -97,7 +100,7 @@ Defects characterized by **broken or interrupted conductive paths**.
 Opens result in **electrical discontinuity** and can cause **functional failure**.
 
 **Example:**
-*(Insert one representative opens defect image)*
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/d70ef643-c395-4aae-aa70-2257a453d09c" />
 
 ---
 
@@ -121,8 +124,9 @@ Bridges are **structurally and visually distinct** from shorts and require separ
 
 Bridges differ from shorts due to their **larger, more pronounced connecting regions**.
 
-**Example (Placeholder):**
-🖼️ `bridges_sample_placeholder.png`
+**Example:**
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/96a21fd6-2f08-4ef0-b77b-28badde4a292" />
+
 
 ---
 
@@ -143,7 +147,9 @@ Surface defects introduced during **Chemical Mechanical Planarization (CMP)** pr
 CMP scratches primarily affect **surface quality** and are commonly observed in **SEM images**.
 
 **Example:**
-*(Insert one representative CMP scratch image)*
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/983c1a15-6926-495c-9133-6c4a439aeb5f" />
+
+
 
 ---
 
@@ -164,7 +170,8 @@ Structural fractures or breaks caused by **mechanical or thermal stress**.
 Cracks are **distinct from scratches** due to their **fractured, structural appearance**.
 
 **Example:**
-*(Insert one representative crack defect image)*
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/2a2ca491-8ea3-49f6-bd20-409904bc7d48" />
+
 
 ---
 
@@ -185,7 +192,8 @@ Defects involving **incomplete, missing, or deformed via structures**.
 These defects are typically identified in **high‑magnification inspection images**.
 
 **Example:**
-*(Insert one representative malformed via image)*
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/27e37383-14a5-42b3-81d7-0e46e7e70f01" />
+
 
 ---
 
