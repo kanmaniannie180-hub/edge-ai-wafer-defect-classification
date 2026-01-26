@@ -189,6 +189,23 @@ These defects are typically identified in **high‑magnification inspection imag
 
 ---
 
+## 🖼️ Visual Reference Policy (Phase-1)
+
+For the purpose of **documentation clarity only**, representative images shown in this file may include:
+
+* Organizer-provided sample images, **or**
+* **Synthetic / illustrative placeholder images** generated solely for visualization
+
+These images are **not** used in:
+
+* Training
+* Validation
+* Testing
+
+All models are trained and evaluated **exclusively on real inspection images** sourced as documented in `DATASET.md`.
+
+---
+
 ## 🔒 Class Finalization Statement
 
 The above **eight defect classes are fixed for Phase‑1** and **will not be modified**.
