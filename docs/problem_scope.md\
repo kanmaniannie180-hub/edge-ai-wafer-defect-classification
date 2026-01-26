@@ -1,0 +1,61 @@
+FINAL PROBLEM STATEMENT:
+
+Semiconductor fabrication facilities rely on high-resolution inspection systems such as optical inspection and scanning electron microscopy (SEM) to detect wafer and die-level defects.
+These inspection tools generate large volumes of image data, making centralized inspection pipelines prone to high latency, bandwidth bottlenecks, and increased operational cost.
+Manual defect review further limits scalability in high-throughput manufacturing environments.
+There is a need for a real-time, scalable defect classification solution that can operate close to the inspection source.
+Deploying lightweight deep learning models on edge devices enables fast defect screening while reducing data transfer and infrastructure overhead.
+
+SCOPE:Phase 1
+🔒 TASK DEFINITION
+
+Task Type: Image Classification
+
+Input: Single inspection image
+
+Output: Defect class label
+
+❌ No detection
+❌ No segmentation
+❌ No localization
+
+🔒 DEFECT CLASSES
+Exactly 8 classes:
+1. clean
+2. other
+3. shorts
+4. opens
+5. bridges
+6. cmp_scratches
+7. cracks
+8. malformed_vias
+
+🔒 INPUT CONSTRAINTS
+
+Image type: Grayscale
+
+Channels: 1
+
+Resolution: Fixed (e.g., 224×224)
+
+Format: PNG/JPEG
+
+*Aligned with memory and latency constraints of edge devices.
+
+🔒 EDGE DEPLOYMENT TARGET
+
+Target Device: NXP i.MX RT series
+
+Inference Mode: CPU-only
+
+Framework: NXP eIQ (ONNX compatible)
+
+EDGE CONSTRAINTS:
+
+🔒 TARGET CONSTRAINTS
+
+Model size: < 10 MB
+
+Inference latency: < 50 ms / image (CPU estimate)
+
+Memory footprint: Edge-deployable
