@@ -51,6 +51,10 @@ These classes are:
 * Common in real inspection flows
 * Scalable to future phases
 
+<img width="1065" height="602" alt="image" src="https://github.com/user-attachments/assets/3653974b-8f62-4d25-bcc4-18841774508e" />
+
+<img width="983" height="558" alt="image" src="https://github.com/user-attachments/assets/0d19d852-e414-40b6-a352-f2a9f5c57a3c" />
+
 ---
 
 ## 📂 Dataset
@@ -197,6 +201,24 @@ Translation: less theory, more silicon.
 Organizer‑provided sample images are used **only for reference and visualization**. They are **not used** in training, validation, or testing.
 
 ---
+
+## 🖼️ Visual Reference Policy (Phase-1)
+
+For the purpose of **documentation clarity only**, representative images shown in this file may include:
+
+* Organizer-provided sample images, **or**
+* **Synthetic / illustrative placeholder images** generated solely for visualization
+
+These images are **not** used in:
+
+* Training
+* Validation
+* Testing
+
+All models are trained and evaluated **exclusively on real inspection images** sourced as documented in `DATASET.md`.
+
+---
+
 
 ## 📚 References
 
