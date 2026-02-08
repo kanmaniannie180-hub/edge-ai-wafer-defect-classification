@@ -32,10 +32,11 @@ This repo proves that concept — clean, simple, and edge‑aware.
 
 ---
 
-## 🧪 Defect Classes
+## ## 🧪 Defect Classes
 
-The model classifies images into **8 non‑overlapping, fab‑realistic defect categories**:
+The model classifies inspection images into **8 non-overlapping, fab-realistic defect categories**, chosen to be visually distinguishable and representative of common wafer and die-level failure modes.
 
+**Final Class Set (Phase-1):**
 1. `clean`
 2. `other`
 3. `shorts`
@@ -45,11 +46,7 @@ The model classifies images into **8 non‑overlapping, fab‑realistic defect c
 7. `cracks`
 8. `malformed_vias`
 
-These classes are:
-
-* Visually distinguishable
-* Common in real inspection flows
-* Scalable to future phases
+This class design balances **realistic semiconductor inspection scenarios** with **Phase-1 feasibility** and is intentionally scoped to scale in Phase-2.
 
 <img width="1065" height="602" alt="image" src="https://github.com/user-attachments/assets/3653974b-8f62-4d25-bcc4-18841774508e" />
 
