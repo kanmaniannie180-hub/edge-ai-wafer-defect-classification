@@ -1,63 +1,113 @@
-Methodology
+🧠 Methodology
 
-This project follows a phase-based, reproducible methodology to establish a reliable baseline for wafer/SEM defect classification using Edge-AI principles.
+This project follows a phase-based, reproducible methodology to establish a reliable Phase-1 baseline for wafer / SEM defect classification using Edge-AI principles.
 
-1. Dataset Preparation
+📂 1. Dataset Preparation
 
-The dataset consists of eight defect classes, organized using a folder-based structure compatible with standard deep learning pipelines. Data was split into training, validation, and test sets, ensuring that each split contained the same set of classes. Labels were automatically inferred from directory names, eliminating manual labeling errors and ensuring consistency across experiments.
+The dataset consists of eight defect classes, organized using a folder-based structure compatible with standard deep learning pipelines.
 
-2. Model Architecture
+Key steps:
 
-A MobileNetV2 architecture pretrained on ImageNet was selected due to its lightweight design and suitability for edge deployment. The backbone was frozen to prevent overfitting and to establish a stable Phase-1 baseline. A custom classification head was added, consisting of:
+📁 Class-wise directory organization
+
+🔀 Train / Validation / Test split with identical class sets
+
+🏷️ Labels automatically inferred from directory names
+
+This approach eliminates manual labeling errors and ensures consistent, repeatable experiments.
+
+🏗️ 2. Model Architecture
+
+A MobileNetV2 architecture pretrained on ImageNet is selected for its lightweight design and suitability for edge deployment.
+
+Architecture strategy:
+
+🔒 Backbone frozen to prevent overfitting
+
+🎯 Stable Phase-1 baseline
+
+➕ Custom classification head added
+
+Classification head:
 
 Global Average Pooling
 
-Dense layer with 128 units and ReLU activation
+Dense layer (128 units, ReLU)
 
-Output layer with 8 units and Softmax activation
+Output layer (8 units, Softmax)
 
-3. Training Strategy
+⚙️ 3. Training Strategy
 
-Training was conducted under strict constraints to avoid experimental bias:
+Training is conducted under strict constraints to avoid experimental bias and ensure reproducibility.
 
-Adam optimizer with a learning rate of 1e-4
+Configuration:
 
-Maximum of 25 epochs
+🔧 Optimizer: Adam
 
-Early stopping with a patience of 5
+📉 Learning rate: 1e-4
 
-Data augmentation applied uniformly across all training classes
+🔁 Max epochs: 25
 
-Validation and test datasets left unaugmented
+⏹️ Early stopping (patience = 5)
 
-No retraining loops or hyperparameter tuning were performed in Phase-1.
+Data handling:
 
-4. Evaluation
+🔄 Uniform data augmentation applied to training set
 
-Model performance was evaluated on a held-out test set using:
+🚫 Validation and test sets left unaugmented
 
-Overall accuracy
+❌ No hyperparameter tuning or retraining loops were performed in Phase-1.
 
-Per-class precision
+📊 4. Evaluation
 
-Per-class recall
+Model performance is evaluated on a held-out test set using:
 
-Confusion matrix
+📈 Overall accuracy
 
-Class-wise analysis was emphasized to understand defect-specific behavior rather than relying solely on aggregate accuracy.
+🎯 Per-class precision
 
-5. Artifact Freezing
+🔍 Per-class recall
 
-At the end of Phase-1, all outputs were frozen to ensure reproducibility. These include the trained model, evaluation metrics, confusion matrix visualization, and model size. Phase-1 artifacts are not modified in later phases.
+🧩 Confusion matrix
 
-6. ONNX Methodology
+Class-wise analysis is emphasized to understand defect-specific behavior rather than relying solely on aggregate accuracy.
 
-The trained TensorFlow model is exported to ONNX format using tf2onnx.
+📌 5. Artifact Freezing (Phase-1)
 
-The ONNX model is validated using ONNX Runtime to ensure inference correctness.
+At the end of Phase-1, all outputs are frozen to ensure reproducibility.
 
-ONNX enables framework-agnostic, edge-ready deployment with offline execution support.
+Frozen artifacts include:
 
-7. Phase-2 Direction
+💾 Trained model
 
-Observed limitations, particularly in rare and visually ambiguous defect classes, guide Phase-2 work. Planned improvements include controlled fine-tuning, data balancing strategies, and edge-oriented optimizations.
+📊 Evaluation metrics
+
+🧩 Confusion matrix visualization
+
+📦 Model size
+
+Phase-1 artifacts are not modified in later phases.
+
+🔄 6. ONNX Methodology
+
+To support edge deployment and portability:
+
+🔁 The trained TensorFlow model is exported to ONNX using tf2onnx
+
+✅ The ONNX model is validated using ONNX Runtime
+
+🌍 ONNX enables framework-agnostic, offline, edge-ready deployment
+
+🛠️ 7. Phase-2 Direction
+
+Observed limitations—particularly in rare and visually ambiguous defect classes—guide Phase-2 efforts.
+
+Planned improvements include:
+
+🔧 Controlled fine-tuning of the backbone
+
+⚖️ Data balancing strategies
+
+⚡ Edge-oriented optimizations (quantization, pruning)
+
+These enhancements aim to improve defect recall and inference efficiency while preserving edge feasibility.
