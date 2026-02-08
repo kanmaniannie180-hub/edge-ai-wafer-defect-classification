@@ -33,3 +33,18 @@
 
 ### 🧩 Confusion Matrix
 📌 *The confusion matrix image is attached separately.*
+<img width="766" height="585" alt="image" src="https://github.com/user-attachments/assets/72215a23-6c72-4ee8-8a1d-e02e97eb8b13" />
+
+## 🚀 Phase-2 Improvement Strategy
+
+- Address **class imbalance** using targeted data collection and data augmentation  
+- Fine-tune the **last layers of MobileNetV2** to improve defect discrimination  
+- Apply **model optimization techniques** (quantization, pruning) to further reduce model size and improve edge efficiency  
+- Validate optimized models using **ONNX Runtime** and prepare for **edge hardware deployment**
+
+---
+
+### 🔮 Phase-2 Summary (One Line)
+> Phase-2 will focus on improving accuracy and edge efficiency through data balancing, selective fine-tuning, and model compression.
+
+
