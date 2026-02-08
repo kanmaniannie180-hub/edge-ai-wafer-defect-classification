@@ -107,16 +107,16 @@ The ONNX model is compatible with **NXP eIQ** for downstream deployment.
 │   └── test/
 ├── models/
 ├── scripts/
-├── train.py
-├── eval.py
-├── inference.py
-├── export_onnx.py
+├── assets
+├── results
+├── model_architecture
+├── docs
 ├── DATASET.md
 ├── README.md
 └── requirements.txt
+...
 ```
 
-Clean layout. No chaos. Easy handoff.
 
 ---
 
@@ -189,7 +189,6 @@ This is a **proof‑of‑feasibility**, not a final fab product.
 * Incremental dataset expansion
 * Optional defect localization extension
 
-Translation: less theory, more silicon.
 
 ---
 
