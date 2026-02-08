@@ -1,6 +1,6 @@
 Methodology
 
-This project follows a phase-based, reproducible methodology to build a reliable baseline for wafer/SEM defect classification using Edge-AI principles.
+This project follows a phase-based, reproducible methodology to establish a reliable baseline for wafer/SEM defect classification using Edge-AI principles.
 
 1. Dataset Preparation
 
@@ -28,13 +28,13 @@ Early stopping with a patience of 5
 
 Data augmentation applied uniformly across all training classes
 
-Validation and test datasets were left unaugmented
+Validation and test datasets left unaugmented
 
 No retraining loops or hyperparameter tuning were performed in Phase-1.
 
 4. Evaluation
 
-Model performance was evaluated on the held-out test set using:
+Model performance was evaluated on a held-out test set using:
 
 Overall accuracy
 
@@ -52,12 +52,12 @@ At the end of Phase-1, all outputs were frozen to ensure reproducibility. These 
 
 6. ONNX Methodology
 
-Trained TensorFlow model is exported to ONNX format using tf2onnx
+The trained TensorFlow model is exported to ONNX format using tf2onnx.
 
-ONNX model is validated and tested using ONNX Runtime for inference correctness
+The ONNX model is validated using ONNX Runtime to ensure inference correctness.
 
-ONNX enables framework-agnostic and edge-ready deployment, supporting offline execution
+ONNX enables framework-agnostic, edge-ready deployment with offline execution support.
 
 7. Phase-2 Direction
 
-Observed limitations, particularly in rare and visually ambiguous defect classes, guide Phase-2 work, which will focus on controlled fine-tuning, data balancing, and edge-oriented optimization.
+Observed limitations, particularly in rare and visually ambiguous defect classes, guide Phase-2 work. Planned improvements include controlled fine-tuning, data balancing strategies, and edge-oriented optimizations.
