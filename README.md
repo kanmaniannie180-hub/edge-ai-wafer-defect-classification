@@ -221,7 +221,7 @@ All models are trained and evaluated **exclusively on real inspection images** s
 
 * WM‑811K Wafer Map Defect Dataset
 * SEM Defect Image Datasets
-* Academic literature on semiconductor inspection & edge AI(ieee or springer)
+* Academic literature on semiconductor inspection & edge AI(ieee or springer,etc.,)
 
 ---
 
