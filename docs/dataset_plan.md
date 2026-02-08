@@ -30,7 +30,7 @@ The goal is to ensure **dataset credibility, class balance, and judge-defensible
 | malformed_vias | 100           |
 | **Total**      | **800**       |
 
-📌 *If even 60–80 images per class are achieved, the dataset is still considered acceptable for Phase-1. The above table represents the ideal target.*
+📌 *If even 60–80 images per class are achieved, the dataset is still considered acceptable for Phase-1. The above table represents the ideal target.The real achieved target is given in datasets.md*
 
 ---
 
