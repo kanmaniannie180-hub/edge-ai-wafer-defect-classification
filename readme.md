@@ -54,6 +54,12 @@ classification of common PCB manufacturing defects.
 
 ------------------------------------------------------------------------
 
+## Archtecture Diagram 
+
+<img width="1536" height="1024" alt="ChatGPT Image Jul 5, 2026, 09_08_20 PM" src="https://github.com/user-attachments/assets/c07fa07d-325d-466f-a99d-9dedeb8502a3" />
+
+------------------------------------------------------------------------
+
 ## 📂 Dataset
 
 The dataset contains **632 real PCB inspection images** distributed
@@ -92,6 +98,11 @@ PCB_Defect_EdgeAI/
 ├── README.md
 └── dataset.md
 ```
+------------------------------------------------------------------------
+
+##  System Workflow
+
+<img width="1536" height="1024" alt="ChatGPT Image Jul 5, 2026, 09_15_39 PM" src="https://github.com/user-attachments/assets/170cd30d-8180-48a7-987c-ce44f0c874d3" />
 
 ------------------------------------------------------------------------
 
@@ -110,12 +121,29 @@ pip install -r requirements.txt
 ``` bash
 python train.py
 ```
+------------------------------------------------------------------------
+## Training Pipeline
+
+<img width="1536" height="1024" alt="ChatGPT Image Jul 5, 2026, 09_13_32 PM" src="https://github.com/user-attachments/assets/f474a983-ce4b-4bbe-9abc-574c195fa713" />
+
+
+------------------------------------------------------------------------
 
 ## 📈 Evaluation
 
 ``` bash
 python evaluate.py
 ```
+
+
+------------------------------------------------------------------------
+##  Evaluation Pipeline
+
+
+<img width="1536" height="1024" alt="ChatGPT Image Jul 5, 2026, 09_17_56 PM" src="https://github.com/user-attachments/assets/8631dbc4-fb0d-434c-99c0-41c59d381a63" />
+
+
+------------------------------------------------------------------------
 
 ## 📦 Export ONNX
 
@@ -130,6 +158,13 @@ cd streamlit_app
 streamlit run app.py
 ```
 
+------------------------------------------------------------------------
+###  Streamlit Deployment Architecture
+
+<img width="1536" height="1024" alt="ChatGPT Image Jul 5, 2026, 09_17_56 PM" src="https://github.com/user-attachments/assets/73795cd7-ca6f-409b-84f6-29cd19aff011" />
+
+
+------------------------------------------------------------------------
 ### Dashboard Features
 
 -   Upload PCB Image
