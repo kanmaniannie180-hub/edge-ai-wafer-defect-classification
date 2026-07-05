@@ -1,0 +1,13 @@
+| Metric                   | Value            |
+| ------------------------ | ---------------- |
+| Best Validation Accuracy | 74.19            |
+| Number of Classes        | 8                |
+| Training Images          | 440              |
+| Validation Images        | 93               |
+| Test Images              | 99               |
+| Backbone                 | ConvNeXt Tiny    |
+| Optimizer                | AdamW            |
+| Scheduler                | Cosine Annealing |
+| Mixed Precision          | Yes              |
+| Transfer Learning        | Yes              |
+| Early Stopping           | Yes              |

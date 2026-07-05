@@ -1,0 +1,31 @@
+Deployment Target:
+NVIDIA GPU
+
+Model:
+ConvNeXt Tiny
+
+Input Resolution:
+224 × 224 RGB
+
+Inference Type:
+Real-time Image Classification
+
+Optimization:
+Mixed Precision Training
+Transfer Learning
+Early Stopping
+AdamW Optimizer
+Cosine Annealing Scheduler
+
+Application:
+Automated PCB Defect Detection for Smart Manufacturing
+
+Supported Defects:
+Bridges
+Clean
+Cracks
+Malformed Vias
+Open
+Other
+Scratches
+Short

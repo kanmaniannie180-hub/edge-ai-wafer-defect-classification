@@ -1,0 +1,6 @@
+PCB Defect Classification Model
+==================================================
+
+Architecture : ConvNeXt Tiny
+Total Parameters : 28,217,960
+Trainable Parameters : 399,368
