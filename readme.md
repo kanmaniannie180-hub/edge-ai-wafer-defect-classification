@@ -72,7 +72,8 @@ across **8 defect classes**.
   Testing            99
   Total             632
 
-See **dataset.md** for complete details.
+See **dataset.md** for complete details.> 
+**Dataset Organization:** The repository stores the processed dataset as separate `train`, `val`, and `test` directories at the repository root. This organization preserves the standard machine learning dataset split while simplifying repository navigation.
 
 ------------------------------------------------------------------------
 ## 📂 Dataset Structure
