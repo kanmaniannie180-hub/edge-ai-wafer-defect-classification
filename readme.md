@@ -75,7 +75,52 @@ across **8 defect classes**.
 See **dataset.md** for complete details.
 
 ------------------------------------------------------------------------
+## 📂 Dataset Structure
 
+The processed dataset is organized into three standard machine learning splits:
+
+```text
+train/
+val/
+test/
+```
+
+Each split contains the same eight defect classes:
+
+```text
+train/
+├── bridges/
+├── clean/
+├── cracks/
+├── malformed_vias/
+├── open/
+├── other/
+├── scratches/
+└── short/
+
+val/
+├── bridges/
+├── clean/
+├── cracks/
+├── malformed_vias/
+├── open/
+├── other/
+├── scratches/
+└── short/
+
+test/
+├── bridges/
+├── clean/
+├── cracks/
+├── malformed_vias/
+├── open/
+├── other/
+├── scratches/
+└── short/
+```
+
+> **Repository Note:** For ease of browsing and GitHub repository management, the processed dataset splits (`train`, `val`, and `test`) are stored directly in the repository root rather than inside a separate `dataset/` directory. Together, these folders constitute the complete processed dataset used for training, validation, and testing.
+------------------------------------------------------------------------
 ## 🏗 Project Structure
 
 ``` text
